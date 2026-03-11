@@ -1,6 +1,7 @@
 "use client";
 
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import type { Project } from "@/data/projects";
 import ScrollReveal from "./ScrollReveal";
 
@@ -85,32 +86,39 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         )}
 
         {/* Links */}
-        {(project.link || project.githubLink) && (
-          <div className="flex gap-3">
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-sm text-accent-cyan transition-colors hover:text-accent-glow"
-              >
-                <ExternalLink size={14} />
-                Live
-              </a>
-            )}
-            {project.githubLink && (
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-sm text-text-muted transition-colors hover:text-text-primary"
-              >
-                <Github size={14} />
-                Code
-              </a>
-            )}
-          </div>
-        )}
+        <div className="flex flex-wrap gap-3">
+          {project.hasDetailPage && (
+            <Link
+              href={`/projects/${project.id}`}
+              className="flex items-center gap-1.5 text-sm font-medium text-accent-glow transition-colors hover:text-accent-purple"
+            >
+              <ArrowRight size={14} />
+              Read the story
+            </Link>
+          )}
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-sm text-accent-cyan transition-colors hover:text-accent-glow"
+            >
+              <ExternalLink size={14} />
+              Live
+            </a>
+          )}
+          {project.githubLink && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-sm text-text-muted transition-colors hover:text-text-primary"
+            >
+              <Github size={14} />
+              Code
+            </a>
+          )}
+        </div>
       </div>
     </ScrollReveal>
   );

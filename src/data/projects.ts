@@ -9,6 +9,7 @@ export interface Project {
   githubLink?: string;
   image?: string;
   month: number;
+  hasDetailPage?: boolean;
 }
 
 export const projects: Project[] = [
@@ -25,22 +26,29 @@ export const projects: Project[] = [
     month: 1,
   },
   {
-    id: "project-2",
-    title: "Coming Soon",
+    id: "entrancedates",
+    title: "entrancedates.com",
     description:
-      "The next application in my journey. Currently in the ideation phase.",
-    status: "idea",
-    techStack: [],
+      "A one-stop platform for Indian students to discover, track, and manage engineering entrance exam dates, forms, fees, and applications — all from one place.",
+    story:
+      "When my younger brother started preparing for his entrance exams, I saw him go through the same chaos I went through. Dozens of exams, scattered deadlines, confusing forms. Nobody helped me back then — so I decided to build the help I never had.",
+    status: "building",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    link: "https://entrancedates.com",
     month: 1,
+    hasDetailPage: true,
   },
   {
-    id: "project-3",
-    title: "Coming Soon",
+    id: "moon-and-seema",
+    title: "Moon & Seema — 25 Years",
     description:
-      "Month 2 brings new challenges and new applications to build.",
-    status: "idea",
-    techStack: [],
-    month: 2,
+      "A digital celebration of Moon and Seema's 25th wedding anniversary — their love story, photos, videos, and memories preserved forever on the web.",
+    story:
+      "I attended their 25th anniversary and was so moved by their journey together that I decided to build something lasting — a website that captures their story so the celebration lives on forever.",
+    status: "building",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    month: 1,
+    hasDetailPage: true,
   },
   {
     id: "project-4",
