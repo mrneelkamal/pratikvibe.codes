@@ -45,8 +45,10 @@ export const projects: Project[] = [
       "A digital celebration of Moon and Seema's 25th wedding anniversary — their love story, photos, videos, and memories preserved forever on the web.",
     story:
       "I attended their 25th anniversary and was so moved by their journey together that I decided to build something lasting — a website that captures their story so the celebration lives on forever.",
-    status: "building",
+    status: "shipped",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    link: "https://pratik1284.github.io/M-and-S/",
+    githubLink: "https://github.com/pratik1284/M-and-S",
     month: 1,
     hasDetailPage: true,
   },
